@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.option {
+    position: relative;
+    margin-bottom: auto;
+    height: 20px;
+    width: 170px;
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(222, 156, 156);
+    top:0%;
+}
+.headerText{
+    position: absolute;
+    size: 50px;
+    left: 5%;
+    top:30%;
+    color: #fff;
+}
+.button{
+    position: absolute;
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    top: 2%;
+    right: 5%;
+
+    display: inline-block;
+    padding: 10px 15px;
+    background-image: linear-gradient(to right, rgb(219, 83, 83), rgb(238, 149, 149));
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    transition: 0.4s ease-out;
+}
+.saveBtn{
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    cursor: pointer;
+
+    display: inline-block;
+    padding: 10px 15px;
+    background-image: linear-gradient(to right, rgb(219, 83, 83), rgb(238, 149, 149));
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    transition: 0.4s ease-out;
+}
+.radioBtn{
+    position: fixed;
+    bottom: 10%;
+    left: 15%;
+}
+.deleteBtm{
+    position: relative;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+
+
+    display: inline-block;
+    padding: 5px 10px;
+    background-image: linear-gradient(to right, rgb(219, 83, 83), rgb(238, 149, 149));
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+.buttonModal{
+    position: absolute;
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    top: 15%;
+    right: 5%;
+
+    display: inline-block;
+    padding: 10px 15px;
+    background-image: linear-gradient(to right, rgb(219, 83, 83), rgb(238, 149, 149));
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    transition: 0.4s ease-out;
+}
+.filtarName{
+    position: fixed;
+    left: 5%;
+    top: 80px;
+}
+.addRow{
+    position: fixed;
+    bottom: 5%;
+    left: 40%;
+    cursor: pointer;
+
+    display: inline-block;
+    padding: 10px 10px;
+    background-image: linear-gradient(to right, rgb(136, 134, 134), rgb(189, 186, 186));
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    transition: 0.4s ease-out;
+}
+.modal-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.myModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    height: 400px;
+    resize: vertical;
+    overflow: auto;
+}
+.contendOfModal{
+    position: fixed;
+    top: 120px;
+    left: 5%;
+}
+
+.inputBlock{
+    position: fixed;
+    left: 30%;
+    top: 30%;
+}
+.filters{
+    position: fixed;
+    top: 10%;
+}
+#inputs{
+    position: relative;
+    padding-bottom: 20px;
+}
+.slide-enter-active,
+.slide-leave-active{
+    transition: transform 0.5s;
+}
+.slide-enter,
+.slide-leave-to{
+    transform: translateY(-50%) translateX(100vw);
+}
+.fade-enter-active,
+.fade-leave-active{
+    transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to{
+    opacity: 0;
+}

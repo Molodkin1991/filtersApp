@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueApp</title>
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h2 class="headerText"> List 0f Filters</h2>
+</div>
+<div id="app">
+    <button class="button" @click="showModal = true">Add Filter</button>
+
+    <transition name="fade" appear>
+        <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
+    </transition>
+
+    <transition name="slide" appear>
+        <div class="myModal" v-if="showModal">
+
+            <div>
+                <div :key="filterIndex">
+                    <div class="header">
+                        <button @click="showModal = false" class="buttonModal">&#10006</button>
+                        <h2 class="headerText">Filters:</h2>
+                    </div>
+
+                    <div class="filtarName">
+                        Filtername: <input type="text" v-model="filterName"/>
+                    </div>
+                    <div>
+                        <ul v-if="items.length > 0" class="contendOfModal">
+                            <li v-for="(item, index) in items" :key="item.index">
+                                <select class="option" v-model="item.name">
+                                    <option class="option" disabled value="">Please Select</option>
+                                    <option class="option" v-for="(key, value) in types">{{value}}</option>
+                                </select>
+                                <select class="option" v-model="item.searchCriteria">
+                                    <option disabled value="">Please Select</option>
+                                    <option class="option" v-for="criteria in types[item.name]">{{criteria}}</option>
+                                </select>
+
+                                <input v-if="item.name === 'DATE'" v-model="item.value" type="date" class="option"/>
+                                <input v-else v-model="item.value" type="text" placeholder="wright text"/>
+
+                                <button class="deleteBtm" href="#" @click.prevent="deleteItem(index)">-</button>
+
+                            </li>
+                        </ul>
+
+                        <button class="saveBtn" @click.prevent="postToServer()">Save</button>
+                    </div>
+                    <p>
+                        <button class="addRow" @click.prevent="addItem()">Add new item</button>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </transition>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
